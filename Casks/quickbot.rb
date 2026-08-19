@@ -1,6 +1,6 @@
 cask "quickbot" do
-  version "0.1.0"
-  sha256 "956ef7236f88f9155a87b0cf85fd4f52c163c3cc5a47b8cfe7917dbb603f718d"
+  version "0.2.0"
+  sha256 "48e3229e4a1cc2e93244522c226897b26a96cfdab4ce34f5bf7f05cbe0dbc109"
 
   url "https://github.com/devland-cc/quickbot/releases/download/v#{version}/quickbot-#{version}.tar.gz"
   name "Quickbot"
@@ -9,7 +9,6 @@ cask "quickbot" do
 
   depends_on macos: :sonoma
   depends_on arch: :arm64
-  depends_on formula: "python@3.12"
 
   app "Quickbot.app"
   app "Quickbot Chat.app"
@@ -37,9 +36,12 @@ cask "quickbot" do
   ]
 
   caveats <<~EOS
-    Finish the install by creating the Python environment and downloading
-    the models (~16 GB, from their original Hugging Face repositories):
+    Finish the install by downloading the models (~16 GB, from their
+    original Hugging Face repositories):
 
       quickbot setup
+
+    Everything Quickbot needs — including its own private Python runtime —
+    lives inside the app and ~/Library/Application Support/Quickbot.
   EOS
 end
