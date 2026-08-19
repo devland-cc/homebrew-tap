@@ -1,6 +1,6 @@
 cask "quickbot" do
-  version "0.2.0"
-  sha256 "48e3229e4a1cc2e93244522c226897b26a96cfdab4ce34f5bf7f05cbe0dbc109"
+  version "0.3.0"
+  sha256 "fdeb06d4f368735d59a8ecd0b68cc001532a7620411aa4b10840a6a09b7f7c10"
 
   url "https://github.com/devland-cc/quickbot/releases/download/v#{version}/quickbot-#{version}.tar.gz"
   name "Quickbot"
@@ -36,8 +36,9 @@ cask "quickbot" do
   ]
 
   caveats <<~EOS
-    Finish the install by downloading the models (~16 GB, from their
-    original Hugging Face repositories):
+    Finish the install by profiling this Mac and downloading the model
+    that fits its RAM (about 3 GB on 8 GB machines, 6 GB on 16 GB,
+    16 GB on 32 GB+):
 
       quickbot setup
 
